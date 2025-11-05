@@ -10,6 +10,7 @@ function moveDodgerLeft() {
   if (left > 0) {
     dodger.style.left = `${left - 5}px`;
   }
+  playMovement();
 }
 
 function moveDodgerRight() {
@@ -19,6 +20,7 @@ function moveDodgerRight() {
   if (left < 360) {
     dodger.style.left = `${left + 5}px`;
   }
+  playMovement();
 }
 
 function moveDodgerUp() {
@@ -27,7 +29,8 @@ function moveDodgerUp() {
 
   if (bottom < 360) {
     dodger.style.bottom = `${bottom + 5}px`;
-  }
+  } 
+  playMovement();
 }
 
 function moveDodgerDown() {
@@ -37,7 +40,8 @@ function moveDodgerDown() {
   if (bottom < 360) {
     dodger.style.bottom = `${bottom - 5}px`;
   }
-}
+  playMovement();
+} 
 
 
 document.addEventListener("keydown", function (e) {
@@ -58,4 +62,13 @@ document.addEventListener("keydown", function (e) {
   }
 
 });
+
+
+function playMovement() {
+  const movement = document.getElementById("movement");
+  movement.currentTime = 0;
+  movement.play();
+}
+
+
 
